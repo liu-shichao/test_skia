@@ -1,0 +1,12 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = fontmgr_android
+
+build obj/src/ports/fontmgr_android.SkFontMgr_android.o: cxx ../../src/ports/SkFontMgr_android.cpp
+build obj/src/ports/fontmgr_android.SkFontMgr_android_parser.o: cxx ../../src/ports/SkFontMgr_android_parser.cpp
+
+build obj/fontmgr_android.stamp: stamp obj/src/ports/fontmgr_android.SkFontMgr_android.o obj/src/ports/fontmgr_android.SkFontMgr_android_parser.o || obj/typeface_freetype.stamp obj/third_party/expat/expat.stamp

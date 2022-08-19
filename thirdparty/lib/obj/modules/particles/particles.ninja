@@ -1,0 +1,17 @@
+defines = -DNDEBUG -DSK_GAMMA_APPLY_TO_A8 -DSK_SUPPORT_GPU=1 -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_USE_LIBGIFCODEC -DSK_CODEC_DECODES_PNG -DSK_ENCODE_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_ENCODE_WEBP -DSK_XML -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_ENABLE_SKOTTIE
+framework_dirs =
+include_dirs = -I../../tools/timer -I../../include/third_party/vulkan -I../../modules/particles/include -I../.. -I../../third_party/externals/libgifcodec -I../.. -I../../modules/skottie/include -I../../modules/skresources/include
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = libparticles
+
+build obj/modules/particles/src/libparticles.SkParticleBinding.o: cxx ../../modules/particles/src/SkParticleBinding.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/modules/particles/src/libparticles.SkParticleDrawable.o: cxx ../../modules/particles/src/SkParticleDrawable.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/modules/particles/src/libparticles.SkParticleEffect.o: cxx ../../modules/particles/src/SkParticleEffect.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/modules/particles/src/libparticles.SkReflected.o: cxx ../../modules/particles/src/SkReflected.cpp || obj/third_party/icu/make_data_assembly.stamp
+
+build ./libparticles.a: alink obj/modules/particles/src/libparticles.SkParticleBinding.o obj/modules/particles/src/libparticles.SkParticleDrawable.o obj/modules/particles/src/libparticles.SkParticleEffect.o obj/modules/particles/src/libparticles.SkReflected.o || ./libskia.a ./libskottie.a ./libskresources.a ./libsksg.a ./libskshaper.a ./libskunicode.a
+  arflags =
+  output_extension = .a
+  output_dir = 

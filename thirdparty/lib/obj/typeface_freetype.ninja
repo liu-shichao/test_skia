@@ -1,0 +1,12 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1
+framework_dirs =
+include_dirs = -I../.. -I/usr/include/freetype2
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = typeface_freetype
+
+build obj/src/ports/typeface_freetype.SkFontHost_FreeType.o: cxx ../../src/ports/SkFontHost_FreeType.cpp
+build obj/src/ports/typeface_freetype.SkFontHost_FreeType_common.o: cxx ../../src/ports/SkFontHost_FreeType_common.cpp
+
+build obj/typeface_freetype.stamp: stamp obj/src/ports/typeface_freetype.SkFontHost_FreeType.o obj/src/ports/typeface_freetype.SkFontHost_FreeType_common.o || obj/third_party/freetype2/freetype2.stamp

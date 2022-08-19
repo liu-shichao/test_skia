@@ -1,0 +1,14 @@
+defines = -DNDEBUG
+framework_dirs =
+include_dirs =
+cflags = -std=c11 -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = libskcms
+
+build obj/modules/skcms/libskcms.skcms.o: cxx ../../modules/skcms/skcms.cc
+
+build ./libskcms.a: alink obj/modules/skcms/libskcms.skcms.o
+  arflags =
+  output_extension = .a
+  output_dir = 

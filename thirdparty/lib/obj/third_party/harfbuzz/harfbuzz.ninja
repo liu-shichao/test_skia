@@ -1,0 +1,68 @@
+defines = -DHAVE_OT -DHAVE_CONFIG_OVERRIDE_H -DHB_NO_FALLBACK_SHAPE -DHB_NO_WIN1256 -DNDEBUG
+framework_dirs =
+include_dirs =
+cflags = -w -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -isystem /root/work/skia/third_party/harfbuzz -isystem /root/work/skia/third_party/externals/harfbuzz/src
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = libharfbuzz
+
+build obj/third_party/externals/harfbuzz/src/graph/libharfbuzz.gsubgpos-context.o: cxx ../../third_party/externals/harfbuzz/src/graph/gsubgpos-context.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-aat-layout.o: cxx ../../third_party/externals/harfbuzz/src/hb-aat-layout.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-aat-map.o: cxx ../../third_party/externals/harfbuzz/src/hb-aat-map.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-blob.o: cxx ../../third_party/externals/harfbuzz/src/hb-blob.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer-serialize.o: cxx ../../third_party/externals/harfbuzz/src/hb-buffer-serialize.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer-verify.o: cxx ../../third_party/externals/harfbuzz/src/hb-buffer-verify.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer.o: cxx ../../third_party/externals/harfbuzz/src/hb-buffer.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-common.o: cxx ../../third_party/externals/harfbuzz/src/hb-common.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-draw.o: cxx ../../third_party/externals/harfbuzz/src/hb-draw.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-face.o: cxx ../../third_party/externals/harfbuzz/src/hb-face.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-font.o: cxx ../../third_party/externals/harfbuzz/src/hb-font.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-map.o: cxx ../../third_party/externals/harfbuzz/src/hb-map.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-number.o: cxx ../../third_party/externals/harfbuzz/src/hb-number.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-cff1-table.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-cff1-table.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-cff2-table.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-cff2-table.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-color.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-color.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-face.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-face.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-font.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-font.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-layout.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-layout.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-map.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-map.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-math.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-math.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-meta.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-meta.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-metrics.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-metrics.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-name.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-name.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape-fallback.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shape-fallback.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape-normalize.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shape-normalize.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shape.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-arabic.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-arabic.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-default.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-default.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-hangul.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-hangul.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-hebrew.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-hebrew.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-indic-table.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-indic-table.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-indic.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-indic.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-khmer.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-khmer.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-myanmar.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-myanmar.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-syllabic.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-syllabic.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-thai.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-thai.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-use.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-use.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-vowel-constraints.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-shaper-vowel-constraints.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-tag.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-tag.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-var.o: cxx ../../third_party/externals/harfbuzz/src/hb-ot-var.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-set.o: cxx ../../third_party/externals/harfbuzz/src/hb-set.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shape-plan.o: cxx ../../third_party/externals/harfbuzz/src/hb-shape-plan.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shape.o: cxx ../../third_party/externals/harfbuzz/src/hb-shape.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shaper.o: cxx ../../third_party/externals/harfbuzz/src/hb-shaper.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-static.o: cxx ../../third_party/externals/harfbuzz/src/hb-static.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff-common.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-cff-common.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff1.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-cff1.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff2.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-cff2.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-input.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-input.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-plan.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-plan.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-repacker.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset-repacker.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset.o: cxx ../../third_party/externals/harfbuzz/src/hb-subset.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ucd.o: cxx ../../third_party/externals/harfbuzz/src/hb-ucd.cc
+build obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-unicode.o: cxx ../../third_party/externals/harfbuzz/src/hb-unicode.cc
+
+build ./libharfbuzz.a: alink obj/third_party/externals/harfbuzz/src/graph/libharfbuzz.gsubgpos-context.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-aat-layout.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-aat-map.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-blob.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer-serialize.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer-verify.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-buffer.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-common.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-draw.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-face.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-font.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-map.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-number.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-cff1-table.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-cff2-table.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-color.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-face.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-font.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-layout.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-map.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-math.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-meta.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-metrics.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-name.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape-fallback.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape-normalize.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shape.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-arabic.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-default.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-hangul.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-hebrew.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-indic-table.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-indic.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-khmer.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-myanmar.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-syllabic.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-thai.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-use.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-shaper-vowel-constraints.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-tag.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ot-var.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-set.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shape-plan.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shape.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-shaper.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-static.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff-common.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff1.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-cff2.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-input.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-plan.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset-repacker.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-subset.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-ucd.o obj/third_party/externals/harfbuzz/src/libharfbuzz.hb-unicode.o
+  arflags =
+  output_extension = .a
+  output_dir = 

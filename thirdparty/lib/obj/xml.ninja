@@ -1,0 +1,15 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_XML
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = xml
+
+build obj/src/svg/xml.SkSVGCanvas.o: cxx ../../src/svg/SkSVGCanvas.cpp
+build obj/src/svg/xml.SkSVGDevice.o: cxx ../../src/svg/SkSVGDevice.cpp
+build obj/src/xml/xml.SkDOM.o: cxx ../../src/xml/SkDOM.cpp
+build obj/src/xml/xml.SkXMLParser.o: cxx ../../src/xml/SkXMLParser.cpp
+build obj/src/xml/xml.SkXMLWriter.o: cxx ../../src/xml/SkXMLWriter.cpp
+
+build obj/xml.stamp: stamp obj/src/svg/xml.SkSVGCanvas.o obj/src/svg/xml.SkSVGDevice.o obj/src/xml/xml.SkDOM.o obj/src/xml/xml.SkXMLParser.o obj/src/xml/xml.SkXMLWriter.o || obj/third_party/expat/expat.stamp

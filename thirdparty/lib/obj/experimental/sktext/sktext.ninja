@@ -1,0 +1,18 @@
+defines = -DNDEBUG -DSK_SUPPORT_GPU=1 -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_USE_LIBGIFCODEC -DSK_CODEC_DECODES_PNG -DSK_ENCODE_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_ENCODE_WEBP -DSK_XML -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_SHAPER_HARFBUZZ_AVAILABLE -DSK_UNICODE_AVAILABLE
+framework_dirs =
+include_dirs = -I../../experimental/sktext/include -I../.. -I../../third_party/externals/libgifcodec -I../.. -I../../modules/skshaper/include -I../../modules/skunicode/include
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = libsktext
+
+build obj/experimental/sktext/src/libsktext.Line.o: cxx ../../experimental/sktext/src/Line.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/experimental/sktext/src/libsktext.LogicalRun.o: cxx ../../experimental/sktext/src/LogicalRun.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/experimental/sktext/src/libsktext.Paint.o: cxx ../../experimental/sktext/src/Paint.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/experimental/sktext/src/libsktext.Text.o: cxx ../../experimental/sktext/src/Text.cpp || obj/third_party/icu/make_data_assembly.stamp
+build obj/experimental/sktext/src/libsktext.VisualRun.o: cxx ../../experimental/sktext/src/VisualRun.cpp || obj/third_party/icu/make_data_assembly.stamp
+
+build ./libsktext.a: alink obj/experimental/sktext/src/libsktext.Line.o obj/experimental/sktext/src/libsktext.LogicalRun.o obj/experimental/sktext/src/libsktext.Paint.o obj/experimental/sktext/src/libsktext.Text.o obj/experimental/sktext/src/libsktext.VisualRun.o || ./libskia.a ./libskshaper.a ./libskunicode.a
+  arflags =
+  output_extension = .a
+  output_dir = 

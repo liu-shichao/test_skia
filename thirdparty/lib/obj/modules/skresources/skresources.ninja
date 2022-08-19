@@ -1,0 +1,14 @@
+defines = -DNDEBUG -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_SUPPORT_GPU=1 -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG -DSK_USE_LIBGIFCODEC -DSK_CODEC_DECODES_PNG -DSK_ENCODE_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_ENCODE_WEBP -DSK_XML -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO
+framework_dirs =
+include_dirs = -I../../modules/skresources/include -I../.. -I../../third_party/externals/libgifcodec -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = libskresources
+
+build obj/modules/skresources/src/libskresources.SkResources.o: cxx ../../modules/skresources/src/SkResources.cpp
+
+build ./libskresources.a: alink obj/modules/skresources/src/libskresources.SkResources.o || ./libskia.a obj/experimental/ffmpeg/video_decoder.stamp
+  arflags =
+  output_extension = .a
+  output_dir = 

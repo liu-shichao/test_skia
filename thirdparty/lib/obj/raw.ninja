@@ -1,0 +1,11 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_CODEC_DECODES_RAW -DqDNGBigEndian=0
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -isystem /root/work/skia/third_party/externals/dng_sdk/source -isystem /root/work/skia/third_party/libjpeg-turbo -isystem /root/work/skia/third_party/externals/libjpeg-turbo -isystem /root/work/skia/third_party/externals/piex
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -fexceptions
+root_out_dir = .
+target_output_name = raw
+
+build obj/src/codec/raw.SkRawCodec.o: cxx ../../src/codec/SkRawCodec.cpp
+
+build obj/raw.stamp: stamp obj/src/codec/raw.SkRawCodec.o || ./libdng_sdk.a ./libjpeg.a ./libpiex.a

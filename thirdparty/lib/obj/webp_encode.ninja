@@ -1,0 +1,11 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_ENCODE_WEBP
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -isystem /root/work/skia/third_party/externals/libwebp/src -isystem /root/work/skia/third_party/externals/libwebp
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = webp_encode
+
+build obj/src/images/webp_encode.SkWebpEncoder.o: cxx ../../src/images/SkWebpEncoder.cpp
+
+build obj/webp_encode.stamp: stamp obj/src/images/webp_encode.SkWebpEncoder.o || ./libwebp.a ./libwebp_sse41.a

@@ -1,0 +1,32 @@
+defines = -DSK_PDF_USE_HARFBUZZ_SUBSET -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_ENCODE_JPEG
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -isystem /root/work/skia/third_party/harfbuzz -isystem /root/work/skia/third_party/externals/harfbuzz/src
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = pdf
+
+build obj/src/pdf/pdf.SkClusterator.o: cxx ../../src/pdf/SkClusterator.cpp
+build obj/src/pdf/pdf.SkDeflate.o: cxx ../../src/pdf/SkDeflate.cpp
+build obj/src/pdf/pdf.SkJpegInfo.o: cxx ../../src/pdf/SkJpegInfo.cpp
+build obj/src/pdf/pdf.SkKeyedImage.o: cxx ../../src/pdf/SkKeyedImage.cpp
+build obj/src/pdf/pdf.SkPDFBitmap.o: cxx ../../src/pdf/SkPDFBitmap.cpp
+build obj/src/pdf/pdf.SkPDFDevice.o: cxx ../../src/pdf/SkPDFDevice.cpp
+build obj/src/pdf/pdf.SkPDFDocument.o: cxx ../../src/pdf/SkPDFDocument.cpp
+build obj/src/pdf/pdf.SkPDFFont.o: cxx ../../src/pdf/SkPDFFont.cpp
+build obj/src/pdf/pdf.SkPDFFormXObject.o: cxx ../../src/pdf/SkPDFFormXObject.cpp
+build obj/src/pdf/pdf.SkPDFGradientShader.o: cxx ../../src/pdf/SkPDFGradientShader.cpp
+build obj/src/pdf/pdf.SkPDFGraphicStackState.o: cxx ../../src/pdf/SkPDFGraphicStackState.cpp
+build obj/src/pdf/pdf.SkPDFGraphicState.o: cxx ../../src/pdf/SkPDFGraphicState.cpp
+build obj/src/pdf/pdf.SkPDFMakeCIDGlyphWidthsArray.o: cxx ../../src/pdf/SkPDFMakeCIDGlyphWidthsArray.cpp
+build obj/src/pdf/pdf.SkPDFMakeToUnicodeCmap.o: cxx ../../src/pdf/SkPDFMakeToUnicodeCmap.cpp
+build obj/src/pdf/pdf.SkPDFMetadata.o: cxx ../../src/pdf/SkPDFMetadata.cpp
+build obj/src/pdf/pdf.SkPDFResourceDict.o: cxx ../../src/pdf/SkPDFResourceDict.cpp
+build obj/src/pdf/pdf.SkPDFShader.o: cxx ../../src/pdf/SkPDFShader.cpp
+build obj/src/pdf/pdf.SkPDFSubsetFont.o: cxx ../../src/pdf/SkPDFSubsetFont.cpp
+build obj/src/pdf/pdf.SkPDFTag.o: cxx ../../src/pdf/SkPDFTag.cpp
+build obj/src/pdf/pdf.SkPDFType1Font.o: cxx ../../src/pdf/SkPDFType1Font.cpp
+build obj/src/pdf/pdf.SkPDFTypes.o: cxx ../../src/pdf/SkPDFTypes.cpp
+build obj/src/pdf/pdf.SkPDFUtils.o: cxx ../../src/pdf/SkPDFUtils.cpp
+
+build obj/pdf.stamp: stamp obj/src/pdf/pdf.SkClusterator.o obj/src/pdf/pdf.SkDeflate.o obj/src/pdf/pdf.SkJpegInfo.o obj/src/pdf/pdf.SkKeyedImage.o obj/src/pdf/pdf.SkPDFBitmap.o obj/src/pdf/pdf.SkPDFDevice.o obj/src/pdf/pdf.SkPDFDocument.o obj/src/pdf/pdf.SkPDFFont.o obj/src/pdf/pdf.SkPDFFormXObject.o obj/src/pdf/pdf.SkPDFGradientShader.o obj/src/pdf/pdf.SkPDFGraphicStackState.o obj/src/pdf/pdf.SkPDFGraphicState.o obj/src/pdf/pdf.SkPDFMakeCIDGlyphWidthsArray.o obj/src/pdf/pdf.SkPDFMakeToUnicodeCmap.o obj/src/pdf/pdf.SkPDFMetadata.o obj/src/pdf/pdf.SkPDFResourceDict.o obj/src/pdf/pdf.SkPDFShader.o obj/src/pdf/pdf.SkPDFSubsetFont.o obj/src/pdf/pdf.SkPDFTag.o obj/src/pdf/pdf.SkPDFType1Font.o obj/src/pdf/pdf.SkPDFTypes.o obj/src/pdf/pdf.SkPDFUtils.o || obj/third_party/zlib/zlib.stamp obj/jpeg_decode.stamp obj/jpeg_encode.stamp ./libharfbuzz.a ./libjpeg.a

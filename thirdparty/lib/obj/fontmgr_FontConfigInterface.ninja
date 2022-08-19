@@ -1,0 +1,14 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = fontmgr_FontConfigInterface
+
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface.o: cxx ../../src/ports/SkFontConfigInterface.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct.o: cxx ../../src/ports/SkFontConfigInterface_direct.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct_factory.o: cxx ../../src/ports/SkFontConfigInterface_direct_factory.cpp
+build obj/src/ports/fontmgr_FontConfigInterface.SkFontMgr_FontConfigInterface.o: cxx ../../src/ports/SkFontMgr_FontConfigInterface.cpp
+
+build obj/fontmgr_FontConfigInterface.stamp: stamp obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface.o obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct.o obj/src/ports/fontmgr_FontConfigInterface.SkFontConfigInterface_direct_factory.o obj/src/ports/fontmgr_FontConfigInterface.SkFontMgr_FontConfigInterface.o || obj/typeface_freetype.stamp obj/third_party/fontconfig.stamp

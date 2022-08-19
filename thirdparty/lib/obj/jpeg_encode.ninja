@@ -1,0 +1,12 @@
+defines = -DNDEBUG -DSK_R32_SHIFT=16 -DSK_ENABLE_SKSL -DSK_ENABLE_PRECOMPILE -DSK_USE_PERFETTO -DSK_GAMMA_APPLY_TO_A8 -DSKIA_IMPLEMENTATION=1 -DSK_ENCODE_JPEG
+framework_dirs =
+include_dirs = -I../..
+cflags = -Wno-attributes -fstrict-aliasing -fPIC -fvisibility=hidden -O3 -fdata-sections -ffunction-sections -isystem /root/work/skia/third_party/libjpeg-turbo -isystem /root/work/skia/third_party/externals/libjpeg-turbo
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+root_out_dir = .
+target_output_name = jpeg_encode
+
+build obj/src/images/jpeg_encode.SkJPEGWriteUtility.o: cxx ../../src/images/SkJPEGWriteUtility.cpp
+build obj/src/images/jpeg_encode.SkJpegEncoder.o: cxx ../../src/images/SkJpegEncoder.cpp
+
+build obj/jpeg_encode.stamp: stamp obj/src/images/jpeg_encode.SkJPEGWriteUtility.o obj/src/images/jpeg_encode.SkJpegEncoder.o || ./libjpeg.a
